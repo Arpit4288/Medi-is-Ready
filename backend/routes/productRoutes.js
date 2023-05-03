@@ -7,17 +7,16 @@ const {
   SearchByName,
   SearchByCategory,
   SearchById,
-  GetAllProducts
+  GetAllProducts,
+  GetAllCategories,
 } = require("../controllers/productController");
 
-router.post("/add", AddProduct);
-router.post("/addall", AddAllProduct);
-router.get("/searchbyname", SearchByName);
-router.get("/SearchByCategory", SearchByCategory);
-router.get("/SearchById", SearchById);
-router.get("/SearchById", GetAllProducts);
-
-
-
+router.post("/all", AddAllProduct);
+router.get("/categories", GetAllCategories);
+router.get("/category/:category", SearchByCategory);
+router.get("/search", SearchByName);
+router.get("/:id", SearchById);
+router.get("/", GetAllProducts);
+router.post("/", AddProduct);
 
 module.exports = router;
